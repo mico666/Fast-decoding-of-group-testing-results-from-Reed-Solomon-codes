@@ -13,7 +13,7 @@ Non-adaptive combinatorial group testing has applications in disease screening a
 This repository includes two Java files that implement the algorithms described in the paper:
 
 - **`FindDefectives.java`**: Implements the fast decoding algorithm for identifying defective items using the Reed-Solomon d-disjunct matrices.
-- **`ModInverse.java`**: Implements the modular inverse matrix algorithm used in the construction and decoding process.
+- **`ModInverse.java`**: Implements the modular inverse matrix algorithm used in the decoding process.
 
 Both files are designed to work together and are optimized for the scenarios described in the paper.
 
