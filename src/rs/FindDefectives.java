@@ -1,5 +1,27 @@
 package rs;
 
+/*
+ * Copyright 2024, Mico Luo and Lucia Moura
+ *
+ * Developed for use with the paper:
+ *
+ *    Fast decoding of group testing results from Reed-Solomon d-disjunct matrices.
+ *    Dongxia (Mico) Luo, and Lucia Moura
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the MIT License as published by
+ * the Massachusetts Institute of Technology.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * MIT License for more details.
+ *
+ * You should have received a copy of the MIT License
+ * along with this program. If not, see <https://opensource.org/licenses/MIT>.
+ */
+
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -236,31 +258,4 @@ public class FindDefectives {
 		}
 	}
 
-	public static void main(String[] args) {
-		int k = 4;
-		int q = 11;
-		int N = 10;
-		int d = 3;
-
-		List<List<Integer>> S = new ArrayList<>();
-		S.add(Arrays.asList(1, 4));
-		S.add(Arrays.asList(0, 7));
-		S.add(Arrays.asList(4, 7));
-		S.add(Arrays.asList(1, 10));
-		S.add(Arrays.asList(0, 7, 9));
-		S.add(Arrays.asList(2, 5, 9));
-		S.add(Arrays.asList(5, 9));
-		S.add(Arrays.asList(4, 7));
-		S.add(Arrays.asList(4, 5));
-		S.add(Arrays.asList(3, 8, 9));
-
-		List<int[]> listPoly = findPolynomials(k, q, N, d, S);
-		List<Integer> I = locateDefectives(k, q, listPoly);
-		System.out.println("The polynomials: ");
-		for (int[] list : listPoly) {
-			System.out.println(Arrays.toString(list));
-		}
-		System.out.println("The defectives: " + I );
-		System.out.println("enter: " + enter);
-	}
 }
