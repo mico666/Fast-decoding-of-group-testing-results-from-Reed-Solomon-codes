@@ -15,7 +15,7 @@ This repository includes two Java files that implement the algorithms described 
 - **`FindDefectives.java`**: Implements the fast decoding algorithm for identifying defective items using the Reed-Solomon d-disjunct matrices.
 - **`ModInverse.java`**: Implements the modular inverse matrix algorithm used in the decoding process.
 
-Both files are designed to work together and are optimized for the scenarios described in the paper.
+Both files are designed to work together and the explanation of the algorithms are detailed in the paper.
 
 ## Requirements
 
