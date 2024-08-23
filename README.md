@@ -6,7 +6,7 @@ The paper has been accepted for presentation at the **International Workshop on 
 
 ## Paper Abstract
 
-Non-adaptive combinatorial group testing has applications in disease screening as well as in many problems in digital security and communications. Matrices that are d-disjunct (also called d-cover-free) can be built using codes and allow for the detection of d defective items using group testing. In this paper, we study d-disjunct matrices built from Reed-Solomon codes, and design a specialized algorithm for decoding the results of group testing using these matrices. We do an exper- imental comparison between our method and the naive one that only uses the d-disjunct property of the matrix, and show that the former outperforms the latter as the size of the problem grows.
+Non-adaptive combinatorial group testing has applications in disease screening as well as in many problems in digital security and communications. Matrices that are d-disjunct (also called d-cover-free) can be built using codes and allow for the detection of d defective items using group testing. In this paper, we study d-disjunct matrices built from Reed-Solomon codes, and design a specialized algorithm for decoding the results of group testing using these matrices. We do an experimental comparison between our method and the naive one that only uses the d-disjunct property of the matrix, and show that the former outperforms the latter as the size of the problem grows.
 
 ## Code Overview
 
