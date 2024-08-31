@@ -1,7 +1,7 @@
 package rs;
 
 
-/*
+/**
  * Copyright 2024, Mico Luo and Lucia Moura
  *
  * Developed for use with the paper:
@@ -22,6 +22,10 @@ package rs;
  * along with this program. If not, see <https://opensource.org/licenses/MIT>.
  */
 
+
+/**
+ * This class find the modular inverse matrix.
+ */
 public class ModInverse { // Ax=b
 	public static int[][] findInverse(int k, int mod) {
 

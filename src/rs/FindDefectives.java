@@ -1,6 +1,10 @@
 package rs;
 
-/*
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/**
  * Copyright 2024, Mico Luo and Lucia Moura
  *
  * Developed for use with the paper:
@@ -21,17 +25,29 @@ package rs;
  * along with this program. If not, see <https://opensource.org/licenses/MIT>.
  */
 
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+/**
+ * The primary goal of this class to determine valid polynomials from a list of
+ * integer lists which contain the evaluations of these polynomials from 0 to
+ * N-1
+ */
 
 public class FindDefectives {
 
 	static int startPos = -1; // start position of k consecutive rows
 	static long enter = 0;
 
-	// Main
+	/**
+	 * This method is to find valid polynomials.
+	 * 
+	 * @param k - the degree of the polynomial is k-1
+	 * @param q - the prime
+	 * @param N - polynomials are evaluated from 0 to N-1
+	 * @param d - (d-CFF)
+	 * @param S - a list of integer lists which contain the evaluations of these
+	 *          polynomials from 0 to N-1
+	 * @return
+	 */
+
 	static List<int[]> findPolynomials(int k, int q, int N, int d, List<List<Integer>> S) {
 
 		List<List<Boolean>> Unused = new ArrayList<>(); // indicates if each element in the row has been used or not
@@ -139,6 +155,19 @@ public class FindDefectives {
 
 	}
 
+	/**
+	 * This class checks if a polynomial if valid.
+	 * 
+	 * @param k         - the degree of polynomial is k-1
+	 * @param q         - the prime
+	 * @param N         - polynomials are evaluated from 0 to N-1
+	 * @param S         - a list of integer lists which contain the evaluations of
+	 *                  these polynomials from 0 to N-1
+	 * @param binomial1 - binomial coefficients
+	 * @param binomial2 - binomial coefficients
+	 * @param codeword  - k evaluations from a polynomial
+	 * @return
+	 */
 	static boolean isValidPolynomial(int k, int q, int N, List<List<Integer>> S, int[] binomial1, int[] binomial2,
 			int[] codeword) {
 		enter++;
@@ -158,7 +187,7 @@ public class FindDefectives {
 			}
 		}
 		current = startPos - 1;
-		
+
 		for (int i = current; i >= 0; i--) {
 			int f = 0;
 			int index = i + k;
@@ -176,7 +205,14 @@ public class FindDefectives {
 		return true;
 	}
 
-	// Locate Defectives Algorithm
+	/**
+	 * Method to locate polynomials.
+	 * 
+	 * @param k        - the degree of polynomials is k-1
+	 * @param q        - the prime
+	 * @param listPoly - a list of polynomials
+	 * @return
+	 */
 	static List<Integer> locateDefectives(int k, int q, List<int[]> listPoly) {
 		int[][] inverse = ModInverse.findInverse(k, q); // find the inverse matrix
 		List<Integer> I = new ArrayList<>();
@@ -213,6 +249,7 @@ public class FindDefectives {
 		}
 	}
 
+	// Find the successor of a mixed-radix k-tuple T in lexicographical order
 	static boolean successor(int[] T, int[] size, int k) {
 		int i = k - 1;
 		while ((i >= 0) && T[i] == size[i] - 1) {
@@ -228,6 +265,7 @@ public class FindDefectives {
 
 	}
 
+	// Rearrange the Unused elements
 	static void sort(List<int[]> A, List<List<Boolean>> Unused, int k, int p) {
 		for (int i = 0; i < k; i++) {
 			int offset = startPos + i;
